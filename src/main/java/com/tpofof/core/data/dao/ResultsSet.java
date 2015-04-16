@@ -11,7 +11,7 @@ import lombok.NonNull;
 @Builder
 public class ResultsSet<ModelT> {
 
-	private Integer limit;
+	@NonNull private Integer limit;
 	@NonNull private Integer offset;
 	@NonNull private List<ModelT> results;
 	
