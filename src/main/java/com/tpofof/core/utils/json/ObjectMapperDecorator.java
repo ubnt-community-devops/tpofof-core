@@ -18,7 +18,6 @@ public class ObjectMapperDecorator {
 	public void decorate(ObjectMapper mapper) {
 		Map<String, Module> beans = App.getContext().getBeansOfType(Module.class);
 		for (Entry<String, Module> e : beans.entrySet()) {
-			System.out.println("registering " + e.getKey());
 			mapper.registerModule(e.getValue());
 		}
 	}

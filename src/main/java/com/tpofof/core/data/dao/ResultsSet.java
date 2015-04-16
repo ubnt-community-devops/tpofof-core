@@ -5,13 +5,14 @@ import java.util.List;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 @Builder
 public class ResultsSet<ModelT> {
 
-	private int limit;
-	private int offset;
-	private List<ModelT> results;
+	@NonNull private Integer limit;
+	@NonNull private Integer offset;
+	@NonNull private List<ModelT> results;
 	
 }
