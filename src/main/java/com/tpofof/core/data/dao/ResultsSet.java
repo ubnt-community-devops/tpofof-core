@@ -13,6 +13,7 @@ public class ResultsSet<ModelT> {
 
 	@NonNull private Integer limit;
 	@NonNull private Integer offset;
+	@NonNull private Long total;
 	@NonNull private List<ModelT> results;
 	
 }

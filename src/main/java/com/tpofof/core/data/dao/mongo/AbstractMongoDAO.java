@@ -57,6 +57,7 @@ public abstract class AbstractMongoDAO<ModelT extends IPersistentModel<ModelT, S
 		return ResultsSet.<ModelT>builder()
 				.limit(limit)
 				.offset(offset)
+				.total(count())
 				.results(models)
 				.build();
 	}
@@ -90,6 +91,7 @@ public abstract class AbstractMongoDAO<ModelT extends IPersistentModel<ModelT, S
 		return ResultsSet.<ModelT>builder()
 				.limit(limit)
 				.offset(offset)
+				.total(count(query))
 				.results(models)
 				.build();
 	}

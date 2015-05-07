@@ -13,7 +13,7 @@ public interface IPersistentModelDAO<ModelT extends IPersistentModel<ModelT, Pri
 	
 	public ModelT find(PrimaryKeyT id);
 	
-	public ResultsSet<ModelT> find(QueryT query, int limit, int offset);
+	public ResultsSet<ModelT> find(QueryT query, QueryT countQuery, int limit, int offset);
 	
 	public ModelT insert(ModelT model);
 	

@@ -15,6 +15,7 @@ public class ResultsSetTest {
 		ResultsSet.builder()
 			.limit(100)
 			.offset(200)
+			.total(1000L)
 			.results(new ArrayList<Object>())
 			.build();
 	}
@@ -23,6 +24,7 @@ public class ResultsSetTest {
 	public void testNullLimit() {
 		ResultsSet.builder()
 			.offset(200)
+			.total(1000L)
 			.results(new ArrayList<Object>())
 			.build();
 	}
@@ -31,6 +33,7 @@ public class ResultsSetTest {
 	public void testNullOffset() {
 		ResultsSet.builder()
 			.limit(100)
+			.total(1000L)
 			.results(new ArrayList<Object>())
 			.build();
 	}
@@ -40,6 +43,7 @@ public class ResultsSetTest {
 		ResultsSet.builder()
 			.limit(100)
 			.offset(200)
+			.total(1000L)
 			.build();
 	}
 
@@ -48,11 +52,13 @@ public class ResultsSetTest {
 		ResultsSet<String> expected = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("", "test"))
 				.build();
 		ResultsSet<String> actual = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("", "test"))
 				.build();
 		assertEquals(expected, actual);
@@ -63,11 +69,13 @@ public class ResultsSetTest {
 		ResultsSet<String> expected = ResultsSet.<String>builder()
 				.limit(50)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("", "test"))
 				.build();
 		ResultsSet<String> actual = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("", "test"))
 				.build();
 		assertNotEquals(expected, actual);
@@ -78,11 +86,13 @@ public class ResultsSetTest {
 		ResultsSet<String> expected = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(300)
+				.total(1000L)
 				.results(Lists.newArrayList("", "test"))
 				.build();
 		ResultsSet<String> actual = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("", "test"))
 				.build();	
 		assertNotEquals(expected, actual);
@@ -93,11 +103,13 @@ public class ResultsSetTest {
 		ResultsSet<String> expected = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("first", "test"))
 				.build();
 		ResultsSet<String> actual = ResultsSet.<String>builder()
 				.limit(100)
 				.offset(200)
+				.total(1000L)
 				.results(Lists.newArrayList("first", "not the same", "extra"))
 				.build();
 		assertNotEquals(expected, actual);

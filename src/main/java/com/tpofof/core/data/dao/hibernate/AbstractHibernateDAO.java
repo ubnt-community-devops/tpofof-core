@@ -97,6 +97,7 @@ public abstract class AbstractHibernateDAO<ModelT extends IPersistentModel<Model
         return ResultsSet.<ModelT>builder()
         		.limit(limit)
         		.offset(offset)
+        		.total(count(criteria))
         		.results(criteria.list())
         		.build();
 	}
